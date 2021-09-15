@@ -25,7 +25,7 @@ public class ContentScriptable : ScriptableObject
     }
 
     [Header("Description parameters")]
-    public Color DescriptionColor;
+    public Color descriptionColor;
     public string description;
 
     [Header("Separator parameters")]

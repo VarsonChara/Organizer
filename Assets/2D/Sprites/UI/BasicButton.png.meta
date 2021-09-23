@@ -1,0 +1,328 @@
+fileFormatVersion: 2
+guid: e30b657b2897a3b43bd8e4ca7e6fce35
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2997369843186179282
+    second: BasicButton_0
+  - first:
+      213: 6211177705976945721
+    second: BasicButton_1
+  - first:
+      213: 1777300419078580377
+    second: BasicButton_2
+  - first:
+      213: 6127031302288001927
+    second: BasicButton_3
+  - first:
+      213: -6758648158510240847
+    second: BasicButton_4
+  - first:
+      213: 9021633546694745247
+    second: BasicButton_5
+  - first:
+      213: 567495286179533184
+    second: BasicButton_6
+  - first:
+      213: 1810856876721873823
+    second: BasicButton_7
+  - first:
+      213: -2707127117037905398
+    second: BasicButton_8
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 9
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 8, y: 8, z: 8, w: 8}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 3
+  flipbookColumns: 3
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 32
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 32
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BasicButton_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 20.666668
+        width: 10.333333
+        height: 10.333333
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e236b6422043766d0800000000000000
+      internalID: -2997369843186179282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicButton_1
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 20.666668
+        width: 10.333333
+        height: 10.333333
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93cd4912739823650800000000000000
+      internalID: 6211177705976945721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicButton_2
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 20.666668
+        width: 10.333333
+        height: 10.333333
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 998e45a805d3aa810800000000000000
+      internalID: 1777300419078580377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicButton_3
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 10.666667
+        width: 10.333333
+        height: 10.333333
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78b439cc186970550800000000000000
+      internalID: 6127031302288001927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicButton_4
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 10.666667
+        width: 10.333333
+        height: 10.333333
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bb26260f457432a0800000000000000
+      internalID: -6758648158510240847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicButton_5
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 10.666667
+        width: 10.333333
+        height: 10.333333
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9cdc7c79e7433d70800000000000000
+      internalID: 9021633546694745247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicButton_6
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 0.666667
+        width: 10.333333
+        height: 10.333333
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0819070c4f520e700800000000000000
+      internalID: 567495286179533184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicButton_7
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 0.666667
+        width: 10.333333
+        height: 10.333333
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f93a41c2cb4712910800000000000000
+      internalID: 1810856876721873823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicButton_8
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 0.666667
+        width: 10.333333
+        height: 10.333333
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0ad023ea3a5e6ad0800000000000000
+      internalID: -2707127117037905398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline:
+    - - {x: 0, y: 16}
+      - {x: -16, y: -0.0000006993822}
+      - {x: 0.0000013987644, y: -16}
+      - {x: 16, y: 0.00000019079809}
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

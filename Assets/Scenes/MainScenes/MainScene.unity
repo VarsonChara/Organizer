@@ -742,9 +742,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3a8b50535e970849aa2f40ef05f368f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  contentTypes:
+  - {fileID: 11400000, guid: 19228fc3d1a325c4ea13c988fddd4e91, type: 2}
+  - {fileID: 11400000, guid: 783cd2eed5becb54a9eaa8b47584d862, type: 2}
+  - {fileID: 11400000, guid: 37db2a1982398e14b8872f417ab18d5c, type: 2}
+  - {fileID: 11400000, guid: 11d706dc69d894348927efa9eb3a608e, type: 2}
+  - {fileID: 11400000, guid: 4f49fb1341751104ba3dc2329d662c55, type: 2}
+  - {fileID: 11400000, guid: 33d491f94473b90458b6e3c5a5d9771e, type: 2}
+  - {fileID: 11400000, guid: a5a2e904410e12e43982aad8370147c8, type: 2}
+  - {fileID: 11400000, guid: cae5d6fa1c8831b4081a3f9620bba21f, type: 2}
   contentContainer: {fileID: 445889966}
-  scrollRect: {fileID: 0}
-  testScriptable: {fileID: 11400000, guid: 37db2a1982398e14b8872f417ab18d5c, type: 2}
+  saveFileName: SaveFile
   testContent: {fileID: 8758140263157038522, guid: 15af0294f23528a4aafdb7fb507abe17, type: 3}
 --- !u!1001 &1307392978
 PrefabInstance:

@@ -37,5 +37,5 @@ sysinfo.txt
 *.apk
 *.unitypackage
 
-#SaveFile! Its private >.>
+# Save File! Its private >.>
 SaveFile.json

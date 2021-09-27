@@ -23,6 +23,11 @@ public class MainContentController : MonoBehaviour
     [SerializeField]
     private List<ContentSaveInfo> contents = new List<ContentSaveInfo>();
 
+    /// <summary>
+    /// Prefab to create a new content
+    /// </summary>
+    [SerializeField]
+    private GameObject contentTemplate;
     
     [Header("Save File parameters")]
     [SerializeField]
@@ -30,20 +35,13 @@ public class MainContentController : MonoBehaviour
 
     private string saveFileCompletePath;
 
+    bool error = false;
 
-    [Space]
 
-    [Header("Testing")]
-    // TODO: REMOVE OR REPURPOSE
-    public GameObject testContent;
 
     private void Awake()
     {
-        if (contentContainer == null)
-        {
-            Debug.LogError("The contentContainer is empty!");
-            return;
-        }
+        if (error = ErrorHandler()) return;
 
 
         //Temporary gameobject and content for instantiating
@@ -59,32 +57,29 @@ public class MainContentController : MonoBehaviour
         if (!File.Exists(saveFileCompletePath))
         {
             File.Create(saveFileCompletePath);
+            File.WriteAllText(saveFileCompletePath, "{}");
         }
-
-        
-
-
-        // TODO: Remove completly
-        for (int i = 0; i < 10; i++)
+        else
         {
-            int generatedFlair = UnityEngine.Random.Range(0, contentTypes.Length - 1);
+            StreamReader sr = File.OpenText(saveFileCompletePath);
 
-            ContentSaveInfo generatedTmpInfo = new ContentSaveInfo(i.ToString(), (FlairType)generatedFlair);
+            //Read from Json
+            string jsonSave = sr.ReadToEnd();
 
-            tmpGo = Instantiate(testContent, contentContainer);
-            tmpContent = tmpGo.GetComponent<Content>();
-            contents.Add(generatedTmpInfo);
+            //Convert to array
+            ContentSaveInfo[] tmpSaveInfo = JsonHelper.FromJson<ContentSaveInfo>(jsonSave);
 
-
-            tmpContent.contentScriptable = DetermineContent((FlairType)generatedFlair);
-            tmpContent.SetContent(i.ToString());
+            foreach (var csi in tmpSaveInfo)
+            {
+                CreateContent(csi);
+            }
 
         }
-        
     }
 
+    #region CONTENT_MANIPULATION
 
-    public ContentScriptable DetermineContent(FlairType flair)
+    ContentScriptable DetermineContent(FlairType flair)
     {
 
         foreach (var cType in contentTypes)
@@ -92,9 +87,8 @@ public class MainContentController : MonoBehaviour
             if (cType.flairType == flair) return cType;
         }
 
-        Debug.LogError("Content not found! Critical error!");
+        Debug.LogError("Content type not found! Critical error! Flair not found: " + flair);
 
-        Debug.LogError((int)flair);
 
 #if UNITY_EDITOR
         Debug.Break();
@@ -105,15 +99,49 @@ public class MainContentController : MonoBehaviour
         return null;
     }
 
+    public void CreateContent(ContentSaveInfo csi)
+    {
+        contents.Add(csi);
+        GameObject go = Instantiate(contentTemplate, contentContainer);
+        Content tmpContent = go.GetComponent<Content>();
+
+        tmpContent.contentScriptable = DetermineContent(csi.flair);
+        tmpContent.SetContent(csi.description);
+    }
+
+    #endregion
+
 
     private void OnApplicationQuit()
     {
+        //If error, do not save data!
+        if (error) return;
 
+        // As the app quits, save the state!
         string save = JsonHelper.ToJson(contents.ToArray(), true);
-        //string save = JsonUtility.ToJson(contents, true);
-
-        Debug.Log(save);
         File.WriteAllText(saveFileCompletePath, save);
+    }
+
+    /// <summary>
+    /// Primitive error handler function
+    /// </summary>
+    bool ErrorHandler()
+    {
+        //Sanity checks, if sth happens they can be usefull
+        if (contentContainer == null)
+        {
+            Debug.LogError("The contentContainer is empty!");
+            return true;
+        }
+
+        if (contentTemplate == null)
+        {
+            Debug.LogError("The contentTemplate is empty!");
+            return true;
+        }
+
+
+        return false;
     }
 
 }

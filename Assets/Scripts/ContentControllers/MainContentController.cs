@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
-
+[Serializable]
 public class MainContentController : MonoBehaviour
 {
 
@@ -20,7 +20,8 @@ public class MainContentController : MonoBehaviour
     /// <summary>
     /// A list of contents for the later use.
     /// </summary>
-    private List<Content> contents = new List<Content>();
+    [SerializeField]
+    private List<ContentSaveInfo> contents = new List<ContentSaveInfo>();
 
     
     [Header("Save File parameters")]
@@ -66,12 +67,16 @@ public class MainContentController : MonoBehaviour
         // TODO: Remove completly
         for (int i = 0; i < 10; i++)
         {
+            int generatedFlair = UnityEngine.Random.Range(0, contentTypes.Length - 1);
+
+            ContentSaveInfo generatedTmpInfo = new ContentSaveInfo(i.ToString(), (FlairType)generatedFlair);
 
             tmpGo = Instantiate(testContent, contentContainer);
             tmpContent = tmpGo.GetComponent<Content>();
-            contents.Add(tmpContent);
+            contents.Add(generatedTmpInfo);
 
-            tmpContent.contentScriptable = DetermineContent((FlairType)UnityEngine.Random.Range(0,contentTypes.Length - 1));
+
+            tmpContent.contentScriptable = DetermineContent((FlairType)generatedFlair);
             tmpContent.SetContent(i.ToString());
 
         }
@@ -103,10 +108,12 @@ public class MainContentController : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        
 
-        //Debug.Log(save);
-        //File.WriteAllText(saveFileCompletePath, save);
+        string save = JsonHelper.ToJson(contents.ToArray(), true);
+        //string save = JsonUtility.ToJson(contents, true);
+
+        Debug.Log(save);
+        File.WriteAllText(saveFileCompletePath, save);
     }
 
 }

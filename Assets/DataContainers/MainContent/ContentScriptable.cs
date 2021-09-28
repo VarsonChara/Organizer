@@ -34,6 +34,8 @@ public class ContentScriptable : ScriptableObject
 
     private void DefineFlairName()
     {
+        flairName = "UNDEFINED";
+        //TODO: Change this stuff to the Enums.GetNames() so it can be scalable
         switch (flairType)
         {
             case FlairType.Anime:
@@ -61,5 +63,6 @@ public class ContentScriptable : ScriptableObject
                 flairName = "Work";
                 break;
         }
+
     }
 }

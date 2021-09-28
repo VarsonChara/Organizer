@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e234bf3c1a5410f4ab81ef24d17548d1, type: 3}
   m_Name: BookContent
   m_EditorClassIdentifier: 
-  flairType: 3
+  flairType: 2
   flairColor: {r: 0.9764706, g: 0.7921569, b: 0.14117648, a: 1}
   descriptionColor: {r: 0.9647059, g: 0.8980392, b: 0.5529412, a: 1}
   description: 

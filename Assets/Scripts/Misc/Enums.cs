@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,18 +6,32 @@ using UnityEngine;
 
 public enum FlairType
 {
-    Misc,
     Game,
     VisualNovel,
     Book,
     Anime,
     Learning,
     Work,
-    ToDo
+    ToDo,
+    Misc
 }
 
-
-public class Enums
+public static class Enums
 {
-    //TODO: If some operations on enums are needed, here singleton can be created to simplify them and have in one place
+    //Fast Get enum strings
+    //TODO: Add spaces before capitals
+    public static List<string> GetEnumNames(object _enum)
+    {
+        List<string> flairNames = new List<string>();
+
+        int enumLen = Enum.GetValues(_enum.GetType()).Length;
+
+        for (int i = 0; i < enumLen; i++)
+        {
+            string currentName = ((FlairType)i).ToString();
+            flairNames.Add(currentName);
+        }
+
+        return flairNames;
+    }
 }

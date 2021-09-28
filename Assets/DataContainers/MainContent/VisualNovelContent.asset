@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e234bf3c1a5410f4ab81ef24d17548d1, type: 3}
   m_Name: VisualNovelContent
   m_EditorClassIdentifier: 
-  flairType: 2
+  flairType: 1
   flairColor: {r: 0.8784314, g: 0.3372549, b: 0.99215686, a: 1}
   descriptionColor: {r: 0.74509805, g: 0.18039216, b: 0.8666667, a: 1}
   description: 

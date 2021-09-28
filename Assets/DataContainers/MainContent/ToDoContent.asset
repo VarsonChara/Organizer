@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e234bf3c1a5410f4ab81ef24d17548d1, type: 3}
   m_Name: ToDoContent
   m_EditorClassIdentifier: 
-  flairType: 7
+  flairType: 6
   flairColor: {r: 0.92156863, g: 0.011519609, b: 0, a: 1}
   descriptionColor: {r: 1, g: 0.20599997, b: 0.20599997, a: 1}
   description: 

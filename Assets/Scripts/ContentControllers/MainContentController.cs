@@ -7,6 +7,17 @@ using UnityEngine.UI;
 [Serializable]
 public class MainContentController : MonoBehaviour
 {
+    // A lazy but very optimal implementation of Singleton, modifying blocked and instead of doing stuff with every call, we do it only when instance is about to change
+    // and we make sure everything is correct at that point to remove any additional operations when calling from outside
+    public static MainContentController Instance
+    {
+        get
+        {
+            return _instance;
+        }
+    }
+
+    private static MainContentController _instance;
 
     [SerializeField]
     private ContentScriptable[] contentTypes;
@@ -41,12 +52,18 @@ public class MainContentController : MonoBehaviour
 
     private void Awake()
     {
+        if (_instance != null)
+        {
+            Destroy(this);
+            return;
+        }
+        else
+        {
+            DontDestroyOnLoad(this);
+            _instance = this;
+        }
+
         if (error = ErrorHandler()) return;
-
-
-        //Temporary gameobject and content for instantiating
-        GameObject tmpGo;
-        Content tmpContent;
 
         //TODO: Repurpose it to be loading from file, also create a function that create new content while playing the app
         //TODO: Change it to coroutine, so the app can load and stay responsive, regardless of the amount of content loaded

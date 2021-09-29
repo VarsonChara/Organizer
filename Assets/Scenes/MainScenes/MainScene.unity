@@ -1172,10 +1172,34 @@ PrefabInstance:
     - target: {fileID: 1695637039712304992, guid: d10952dbcf8a2de49b5cbcf7a9bd7cf3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1672206744}
+      objectReference: {fileID: 1577835826}
     - target: {fileID: 1695637039712304992, guid: d10952dbcf8a2de49b5cbcf7a9bd7cf3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1695637039712304992, guid: d10952dbcf8a2de49b5cbcf7a9bd7cf3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ButtonClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 1695637039712304992, guid: d10952dbcf8a2de49b5cbcf7a9bd7cf3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ToggleButton, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1695637039712304992, guid: d10952dbcf8a2de49b5cbcf7a9bd7cf3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393069197925883279, guid: d10952dbcf8a2de49b5cbcf7a9bd7cf3, type: 3}
+      propertyPath: m_Color.b
+      value: 0.5529412
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393069197925883279, guid: d10952dbcf8a2de49b5cbcf7a9bd7cf3, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8980392
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393069197925883279, guid: d10952dbcf8a2de49b5cbcf7a9bd7cf3, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9647059
       objectReference: {fileID: 0}
     - target: {fileID: 3553469404395275690, guid: d10952dbcf8a2de49b5cbcf7a9bd7cf3, type: 3}
       propertyPath: m_text
@@ -1291,6 +1315,18 @@ PrefabInstance:
     - target: {fileID: 1695637039712304992, guid: d10952dbcf8a2de49b5cbcf7a9bd7cf3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393069197925883279, guid: d10952dbcf8a2de49b5cbcf7a9bd7cf3, type: 3}
+      propertyPath: m_Color.b
+      value: 0.5529412
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393069197925883279, guid: d10952dbcf8a2de49b5cbcf7a9bd7cf3, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8980392
+      objectReference: {fileID: 0}
+    - target: {fileID: 3393069197925883279, guid: d10952dbcf8a2de49b5cbcf7a9bd7cf3, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9647059
       objectReference: {fileID: 0}
     - target: {fileID: 3553469404395275690, guid: d10952dbcf8a2de49b5cbcf7a9bd7cf3, type: 3}
       propertyPath: m_text
@@ -1823,7 +1859,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 33d491f94473b90458b6e3c5a5d9771e, type: 2}
   - {fileID: 11400000, guid: a5a2e904410e12e43982aad8370147c8, type: 2}
   contentContainer: {fileID: 445889966}
-  contents: []
   contentTemplate: {fileID: 8758140263157038522, guid: 15af0294f23528a4aafdb7fb507abe17, type: 3}
   saveFileName: SaveFile
 --- !u!1 &1223136101
@@ -2448,6 +2483,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Padding: {x: 0, y: 0, z: 0, w: 0}
   m_Softness: {x: 0, y: 0}
+--- !u!1 &1341610411 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4325828376378164491, guid: d10952dbcf8a2de49b5cbcf7a9bd7cf3, type: 3}
+  m_PrefabInstance: {fileID: 1491344416}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1341610415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1341610411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28259906d6cf56845bc328ddbe1ef290, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeColor: {r: 0, g: 0, b: 0, a: 1}
+  mode: 2
 --- !u!1 &1398531257
 GameObject:
   m_ObjectHideFlags: 0
@@ -2720,10 +2774,22 @@ PrefabInstance:
     - target: {fileID: 1695637039712304992, guid: d10952dbcf8a2de49b5cbcf7a9bd7cf3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1672206744}
+      objectReference: {fileID: 1341610415}
     - target: {fileID: 1695637039712304992, guid: d10952dbcf8a2de49b5cbcf7a9bd7cf3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1695637039712304992, guid: d10952dbcf8a2de49b5cbcf7a9bd7cf3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ButtonClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 1695637039712304992, guid: d10952dbcf8a2de49b5cbcf7a9bd7cf3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ToggleButton, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1695637039712304992, guid: d10952dbcf8a2de49b5cbcf7a9bd7cf3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3553469404395275690, guid: d10952dbcf8a2de49b5cbcf7a9bd7cf3, type: 3}
       propertyPath: m_text
@@ -3089,6 +3155,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1576520055}
   m_CullTransparentMesh: 1
+--- !u!1 &1577835822 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4325828376378164491, guid: d10952dbcf8a2de49b5cbcf7a9bd7cf3, type: 3}
+  m_PrefabInstance: {fileID: 859010725}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1577835826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577835822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28259906d6cf56845bc328ddbe1ef290, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeColor: {r: 0, g: 0, b: 0, a: 1}
+  mode: 1
 --- !u!1 &1601863421
 GameObject:
   m_ObjectHideFlags: 0

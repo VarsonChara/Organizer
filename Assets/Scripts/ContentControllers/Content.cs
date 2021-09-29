@@ -6,6 +6,8 @@ using TMPro;
 
 public class Content : MonoBehaviour
 {
+    ContentSaveInfo selfCsi;
+
     [HideInInspector]
     public ContentScriptable contentScriptable;
 
@@ -27,13 +29,16 @@ public class Content : MonoBehaviour
     [SerializeField]
     TMP_Text descriptionText;
 
-    public void SetContent(string description)
+    public void SetContent(ContentSaveInfo csi)
     {
         if (contentScriptable == null)
         {
             Debug.LogError("Empty ContentScriptable!");
             return;
         }
+
+        selfCsi = csi;
+
         //Flair
         flairBackground.color = contentScriptable.flairColor;
         flairText.text = contentScriptable.FlairName;
@@ -43,6 +48,11 @@ public class Content : MonoBehaviour
 
         //Description
         descriptionBackground.color = contentScriptable.descriptionColor;
-        descriptionText.text = description;
+        descriptionText.text = csi.description;
+    }
+
+    public void OnClick()
+    {
+        MainContentController.Instance.ModeAction(selfCsi);
     }
 }

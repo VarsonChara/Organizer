@@ -15,6 +15,13 @@ public enum FlairType
     ToDo,
     Misc
 }
+//Unnecessary long >.>
+public enum MainPanelButtonToggleMode
+{
+    None,
+    Complete,
+    Delete
+}
 
 public static class Enums
 {

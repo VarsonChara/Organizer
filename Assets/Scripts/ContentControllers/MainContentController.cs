@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
-[Serializable]
+
 public class MainContentController : MonoBehaviour
 {
     // A lazy but very optimal implementation of Singleton, modifying blocked and instead of doing stuff with every call, we do it only when instance is about to change
@@ -29,17 +29,21 @@ public class MainContentController : MonoBehaviour
     private Transform contentContainer;
 
     /// <summary>
-    /// A list of contents for the later use.
+    /// A save class, that holds all the data needed for save
     /// </summary>
-    [SerializeField]
-    private List<ContentSaveInfo> contents = new List<ContentSaveInfo>();
+    private SaveContainer saveContainer;
+
+    private Dictionary<string, GameObject> spawnedContents = new Dictionary<string, GameObject>();
 
     /// <summary>
     /// Prefab to create a new content
     /// </summary>
     [SerializeField]
     private GameObject contentTemplate;
-    
+
+    [Header("Button Mode")]
+    private MainPanelButtonToggleMode toggleMode = MainPanelButtonToggleMode.None;
+
     [Header("Save File parameters")]
     [SerializeField]
     private string saveFileName = "SaveFile";
@@ -65,11 +69,12 @@ public class MainContentController : MonoBehaviour
 
         if (error = ErrorHandler()) return;
 
-        //TODO: Repurpose it to be loading from file, also create a function that create new content while playing the app
         //TODO: Change it to coroutine, so the app can load and stay responsive, regardless of the amount of content loaded
         //TODO: A loading bar or circle implementation would be nice
 
         saveFileCompletePath = saveFileName + ".json";
+
+        saveContainer = new SaveContainer();
 
         if (!File.Exists(saveFileCompletePath))
         {
@@ -81,12 +86,13 @@ public class MainContentController : MonoBehaviour
             StreamReader sr = File.OpenText(saveFileCompletePath);
 
             //Read from Json
+            //TODO: If savefile grows too big, needs to chop that into smaller pieces so it wont be a massive string
             string jsonSave = sr.ReadToEnd();
 
             //Convert to array
-            ContentSaveInfo[] tmpSaveInfo = JsonHelper.FromJson<ContentSaveInfo>(jsonSave);
+            SaveContainer tmpSave = JsonUtility.FromJson<SaveContainer>(jsonSave);
 
-            foreach (var csi in tmpSaveInfo)
+            foreach (var csi in tmpSave.GetActiveContents())
             {
                 CreateContent(csi);
             }
@@ -118,12 +124,59 @@ public class MainContentController : MonoBehaviour
 
     public void CreateContent(ContentSaveInfo csi)
     {
-        contents.Add(csi);
+        if (!saveContainer.AddContnet(csi)) return;
         GameObject go = Instantiate(contentTemplate, contentContainer);
         Content tmpContent = go.GetComponent<Content>();
 
+        spawnedContents.Add(csi.description, go);
         tmpContent.contentScriptable = DetermineContent(csi.flair);
-        tmpContent.SetContent(csi.description);
+        tmpContent.SetContent(csi);
+    }
+
+    public void RemoveContent(ContentSaveInfo csi)
+    {
+        if (!saveContainer.RemoveContent(csi)) return;
+
+        Destroy(spawnedContents[csi.description]);
+    }
+
+    public void CompleteContent(ContentSaveInfo csi)
+    {
+        if (!saveContainer.CompleteContent(csi)) return;
+
+        Destroy(spawnedContents[csi.description]);
+    }
+    /// <summary>
+    /// Function called on button click
+    /// </summary>
+    /// <param name="mode">Set app mode</param>
+    public bool ChangeToggleButtons(MainPanelButtonToggleMode mode)
+    {
+        if (mode == toggleMode)
+        {
+            toggleMode = MainPanelButtonToggleMode.None;
+            return false;
+        }
+        else
+        {
+            toggleMode = mode;
+            return true;
+        }
+    }
+
+    public void ModeAction(ContentSaveInfo csi)
+    {
+        switch (toggleMode)
+        {
+            case MainPanelButtonToggleMode.None:
+                break;
+            case MainPanelButtonToggleMode.Complete:
+                CompleteContent(csi);
+                break;
+            case MainPanelButtonToggleMode.Delete:
+                RemoveContent(csi);
+                break;
+        }
     }
 
     #endregion
@@ -131,11 +184,12 @@ public class MainContentController : MonoBehaviour
 
     private void OnApplicationQuit()
     {
+        //TODO: Not really best solution, might want to save every operation
         //If error, do not save data!
         if (error) return;
 
         // As the app quits, save the state!
-        string save = JsonHelper.ToJson(contents.ToArray(), true);
+        string save = JsonUtility.ToJson(saveContainer, true);
         File.WriteAllText(saveFileCompletePath, save);
     }
 

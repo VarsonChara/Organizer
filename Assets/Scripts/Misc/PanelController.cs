@@ -5,6 +5,7 @@ using UnityEngine;
 public class PanelController : MonoBehaviour
 {
 
+
     //Making sure only the correct panel is turned on, if someone (me) forgets to turn sth off
     void Start()
     {
@@ -21,6 +22,7 @@ public class PanelController : MonoBehaviour
         optionList = Enums.GetEnumNames(flair);
 
         AddPanelDropdown.AddOptions(optionList);
+
     }
 
 
@@ -104,6 +106,7 @@ public class PanelController : MonoBehaviour
     public void AddButton()
     {
         AddPanel.SetActive(true);
+        ToggleButton.ResetToggleMode();
     }
 
     public void CancelButton()
@@ -129,6 +132,7 @@ public class PanelController : MonoBehaviour
 
 
     #endregion
+
 
     #endregion
 

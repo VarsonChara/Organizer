@@ -35,7 +35,7 @@ public class ContentScriptable : ScriptableObject
     private void DefineFlairName()
     {
         flairName = "UNDEFINED";
-        //TODO: Change this stuff to the Enums.GetNames() so it can be scalable
+        //TODO: Change this stuff to the Enums.GetNames() so it can be scalable, when it gets capital letter recognition
         switch (flairType)
         {
             case FlairType.Anime:
